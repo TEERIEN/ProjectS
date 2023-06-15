@@ -6,9 +6,9 @@ public class Trigger : MonoBehaviour
 {
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out Dash dash))
+        if (collision.TryGetComponent(out IncreaseAttributes increaseAttributes))
         {
-            dash.IsDashing = true;
+            increaseAttributes.Attributes();
         }
     }
 }
