@@ -441,7 +441,7 @@ MonoBehaviour:
   _force: 35
   _cooldown: 1
   _ignoreLayerCollisionTime: 0.5
-  _isDashing: 0
+  _isDashing: 1
 --- !u!114 &504904015
 MonoBehaviour:
   m_ObjectHideFlags: 0
