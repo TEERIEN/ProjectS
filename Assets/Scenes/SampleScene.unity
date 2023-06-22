@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 504904016}
   - component: {fileID: 504904011}
   - component: {fileID: 504904012}
+  - component: {fileID: 504904020}
   - component: {fileID: 504904014}
   - component: {fileID: 504904015}
   - component: {fileID: 504904013}
@@ -393,6 +394,7 @@ MonoBehaviour:
   - {fileID: 504904012}
   - {fileID: 504904014}
   - {fileID: 504904015}
+  - {fileID: 504904020}
 --- !u!114 &504904012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,10 +408,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 5359917118780306829, guid: c23758289bbd1f141839385eb7d36578, type: 3}
-  _spherePrefab: {fileID: 698071029741785687, guid: 80ee981d62105e6498122f56ba466a04, type: 3}
-  shootForce: 20
+  _durability: 10
   duration: 10
-  _distance: 1.5
 --- !u!114 &504904013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,6 +521,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _increasedForce: 40
   _dash: {fileID: 504904014}
+--- !u!114 &504904020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504904006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b575100a5cab25148a9db66217636b7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 5359917118780306829, guid: c23758289bbd1f141839385eb7d36578, type: 3}
+  _durability: 0
+  duration: 10
+  _spherePrefab: {fileID: 698071029741785687, guid: 80ee981d62105e6498122f56ba466a04, type: 3}
+  shootForce: 19.66
+  _distance: 1.5
+  IsShoot: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

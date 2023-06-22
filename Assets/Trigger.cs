@@ -10,5 +10,20 @@ public class Trigger : MonoBehaviour
         {
             increaseAttributes.Attributes();
         }
+
+        if (collision.TryGetComponent(out ShieldShot shieldShot))
+        {
+            shieldShot.IsShoot = true;
+        }
+
+        if (collision.TryGetComponent(out Health damage))
+        {
+            damage.ApplyDamage(20f);
+        }
+
+        if (collision.TryGetComponent(out Shield shieldStrength))
+        {
+            shieldStrength.ApplyDamage(20f);
+        }
     }
 }

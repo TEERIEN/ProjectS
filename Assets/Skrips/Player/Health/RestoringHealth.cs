@@ -8,8 +8,6 @@ public class RestoringHealth : Health
 
     private float timer;
 
-    public float RecoveryTime { get => _recoveryTime; set => _recoveryTime = value; }
-
     private void FixedUpdate()
     {
         RegenerateHealth();
@@ -17,13 +15,13 @@ public class RestoringHealth : Health
 
     private void RegenerateHealth()
     {
-        if (CurrentHealth < MaxHealth)
+        if (CurrentHealth < _maxHealth)
         {
             timer += Time.fixedDeltaTime;
-            if (timer >= RecoveryTime)
+            if (timer >= _recoveryTime)
             {
-                CurrentHealth += HealthRecoveryRate;
-                CurrentHealth = Mathf.Clamp(CurrentHealth, 0f, MaxHealth);
+                CurrentHealth += _healthRecoveryRate;
+                CurrentHealth = Mathf.Clamp(CurrentHealth, 0f, _maxHealth);
             }
         }
         else

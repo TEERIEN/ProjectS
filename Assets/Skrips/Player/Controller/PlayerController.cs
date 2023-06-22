@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
         public const int SHIELD = 0;
         public const int DASH = 1;
         public const int MULTIPLE_JUMP = 2;
+        public const int SHOOT_SHIELD = 3;
     }
 
     private void Start()
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour
         OnJump();
         OnDash();
         OnShield();
+        OnShoot();
     }
 
     private void FixedUpdate()
@@ -74,6 +76,17 @@ public class PlayerController : MonoBehaviour
             if (skills[SkillID.DASH].CanUse(this))
             {
                 skills[SkillID.DASH].Use(this);
+            }
+        }
+    }
+
+    private void OnShoot()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (skills[SkillID.SHOOT_SHIELD].CanUse(this))
+            {
+                skills[SkillID.SHOOT_SHIELD].Use(this);
             }
         }
     }

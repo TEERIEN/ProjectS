@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Health : MonoBehaviour
+public abstract class Health : MonoBehaviour, IDamage
 {
-    [SerializeField] private float _maxHealth;
-    [SerializeField] private float _currentHealth;
-    [SerializeField] private float _healthRecoveryRate;
+    [SerializeField] protected float _maxHealth;
+    [SerializeField] protected float _currentHealth;
+    [SerializeField] protected float _healthRecoveryRate;
 
-    public float MaxHealth { get => _maxHealth; set => _maxHealth = value; }
-    public float HealthRecoveryRate { get => _healthRecoveryRate; set => _healthRecoveryRate = value; }
     public float CurrentHealth
     {
         get => _currentHealth;
@@ -23,5 +21,10 @@ public abstract class Health : MonoBehaviour
     private void Start()
     {
         _currentHealth = _maxHealth;
+    }
+
+    public void ApplyDamage(float damage)
+    {
+        CurrentHealth -= damage;
     }
 }
